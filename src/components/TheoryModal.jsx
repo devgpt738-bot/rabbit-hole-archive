@@ -44,9 +44,9 @@ export default function TheoryModal({ theory, onClose, onScoreIncrease }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6 }}
         onClick={onClose}
-        className="fixed inset-0 z-[100] bg-black/50 overflow-y-auto custom-scrollbar flex flex-col items-center p-4 md:p-12"
+        className="fixed inset-0 z-[100] bg-black/50 overflow-y-auto custom-scrollbar p-4 md:p-12"
       >
-        <div className="min-h-[100dvh] w-full flex flex-col items-center pt-8 pb-32">
+        <div className="min-h-full w-full max-w-4xl mx-auto pt-8 pb-32 flex flex-col">
           {/* Story Container (No fixed background, just floating text) */}
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
@@ -54,7 +54,7 @@ export default function TheoryModal({ theory, onClose, onScoreIncrease }) {
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30, delay: 0.2 }}
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-            className="relative w-full max-w-4xl flex flex-col min-w-0"
+            className="relative w-full flex flex-col min-w-0"
           >
             {/* Close Button floating top right */}
             <button
