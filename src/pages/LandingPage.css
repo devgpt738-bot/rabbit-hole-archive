@@ -189,6 +189,8 @@
   box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 2px 2px rgba(255,255,255,0.2), inset 0 -2px 5px rgba(163,38,56,0.2);
   transform: translateY(0);
   animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 @keyframes modalPop {
@@ -219,7 +221,7 @@
   font-size: 1.1rem !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px), (max-aspect-ratio: 4/3) {
   .primary-btn { font-size: 1rem !important; padding: 12px 35px !important; }
   
   .about-modal-content {
