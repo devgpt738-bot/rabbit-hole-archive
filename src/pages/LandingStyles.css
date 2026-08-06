@@ -250,10 +250,30 @@
   }
   
   .landing-logo-container {
-    font-size: 11px !important; /* Fixed base size to bypass Instagram clamp/vw bugs */
+    font-size: 16px !important; 
     flex-direction: row !important;
     flex-wrap: nowrap !important;
+    align-items: center !important; 
     gap: 0 !important;
-    align-items: center !important;
+  }
+
+  .logo-optical-wrapper {
+    margin-right: -15px !important; 
+    transform: translateY(0) !important; 
+  }
+
+  .landing-logo-icon {
+    width: 85px !important; 
+    height: auto !important;
+  }
+  
+  .cinematic-title {
+    font-size: 28px !important; 
+    letter-spacing: 3px !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
   }
 }
