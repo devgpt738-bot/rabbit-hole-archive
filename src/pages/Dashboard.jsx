@@ -8,6 +8,7 @@ import TheoryModal from '../components/TheoryModal';
 import UserProfile from '../components/UserProfile';
 import { THEORIES, CATEGORIES } from '../data';
 import { useAuth } from '../context/AuthContext';
+import bgVideo from '../assets/da.mp4';
 
 export default function Dashboard({ onOpenSearch }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -101,7 +102,7 @@ export default function Dashboard({ onOpenSearch }) {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <motion.video 
           ref={videoRef}
-          src="/da.mp4" 
+          src={bgVideo} 
           autoPlay 
           loop 
           muted 

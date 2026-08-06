@@ -221,4 +221,29 @@
 
 @media (max-width: 768px) {
   .primary-btn { font-size: 1rem !important; padding: 12px 35px !important; }
+  
+  .about-modal-content {
+    padding: 30px 20px;
+    width: 95%;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  
+  .modal-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .modal-text {
+    font-size: 0.95rem !important;
+    margin-bottom: 15px;
+  }
+  
+  .landing-logo-container {
+    font-size: clamp(10px, 4vw, 18px);
+  }
+  
+  .cinematic-title {
+    white-space: normal;
+    text-align: center;
+  }
 }

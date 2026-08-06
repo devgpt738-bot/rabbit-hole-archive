@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
+import appLogo from '../assets/logo.png';
+import bgVideo from '../assets/da.mp4';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ export default function LandingPage() {
       {/* 3D Video Background */}
       <div className="bg-video-container">
         <video ref={videoRef} autoPlay loop muted playsInline className="bg-video">
-          <source src="/da.mp4" type="video/mp4" />
+          <source src={bgVideo} type="video/mp4" />
         </video>
         <div className="video-overlay"></div>
       </div>
@@ -33,7 +35,7 @@ export default function LandingPage() {
         <div className="hero-branding">
           <div className="landing-logo-container">
             <div className="logo-optical-wrapper">
-              <img src="/logo.png" alt="Rabbit Logo" className="landing-logo-icon" />
+              <img src={appLogo} alt="Rabbit Logo" className="landing-logo-icon" />
             </div>
             <h1 className="cinematic-title">RABBIT HOLE</h1>
           </div>

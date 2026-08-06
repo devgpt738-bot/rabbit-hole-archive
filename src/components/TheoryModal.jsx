@@ -54,12 +54,12 @@ export default function TheoryModal({ theory, onClose, onScoreIncrease }) {
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30, delay: 0.2 }}
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-            className="relative w-full max-w-4xl flex flex-col"
+            className="relative w-full max-w-4xl flex flex-col min-w-0"
           >
             {/* Close Button floating top right */}
             <button
               onClick={onClose}
-              className="fixed right-6 top-6 w-12 h-12 rounded-full flex items-center justify-center 
+              className="fixed right-4 top-4 md:right-6 md:top-6 w-12 h-12 rounded-full flex items-center justify-center 
                 bg-white/5 border border-white/20 text-white/70 hover:text-white hover:bg-white/20 
                 hover:border-white/50 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] 
                 transition-all duration-300 z-[110] backdrop-blur-md"
@@ -76,7 +76,7 @@ export default function TheoryModal({ theory, onClose, onScoreIncrease }) {
                   </span>
                 ))}
               </div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white/90 font-bold leading-snug drop-shadow-[0_0_25px_rgba(255,255,255,0.3)] py-2 break-words">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-white/90 font-bold leading-snug drop-shadow-[0_0_25px_rgba(255,255,255,0.3)] py-2 break-words hyphens-auto overflow-wrap-anywhere">
                 {theory.title}
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-crimson-neon to-transparent mt-8 mb-4 rounded-full shadow-[0_0_20px_#ff4d64]"></div>
@@ -98,7 +98,7 @@ export default function TheoryModal({ theory, onClose, onScoreIncrease }) {
                 // Split by double newline to render paragraphs
                 theory.content.split('\n\n').map((paragraph, idx) => (
                   <p key={idx} className={`font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-8 tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]
-                    ${idx === 0 ? 'first-letter:text-5xl md:first-letter:text-6xl first-letter:font-display first-letter:text-crimson-neon first-letter:float-left first-letter:mr-3 md:first-letter:mr-4 first-letter:-mt-1 first-letter:drop-shadow-[0_0_20px_rgba(255,77,100,0.8)] first-line:tracking-widest first-line:text-white' : ''}`}>
+                    ${idx === 0 ? 'first-letter:text-4xl sm:first-letter:text-5xl first-letter:font-display first-letter:text-crimson-neon first-letter:float-left first-letter:mr-3 md:first-letter:mr-4 first-letter:-mt-1 first-letter:drop-shadow-[0_0_20px_rgba(255,77,100,0.8)] first-line:tracking-widest first-line:text-white' : ''}`}>
                     {paragraph}
                   </p>
                 ))

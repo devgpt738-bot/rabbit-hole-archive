@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CATEGORIES } from '../data';
 import { ChevronLeft } from 'lucide-react';
+import appLogo from '../assets/logo.png';
 
 export default function Sidebar({ activeCategory, setActiveCategory, isSidebarOpen, setIsSidebarOpen }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -41,7 +42,7 @@ export default function Sidebar({ activeCategory, setActiveCategory, isSidebarOp
         <div className="pt-6 px-6 pb-4 flex items-center justify-between min-h-[80px]">
           <a href="/" className="flex items-center transition-transform hover:scale-105">
             {isSidebarOpen && (
-              <motion.img layoutId="app-logo" src="/logo.png" alt="Logo" className="w-[90px] -ml-2 drop-shadow-[0_0_15px_rgba(163,38,56,0.5)]" />
+              <motion.img layoutId="app-logo" src={appLogo} alt="Logo" className="w-[90px] -ml-2 drop-shadow-[0_0_15px_rgba(163,38,56,0.5)]" />
             )}
           </a>
           <button 

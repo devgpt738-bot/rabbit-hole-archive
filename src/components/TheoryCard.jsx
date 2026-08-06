@@ -47,11 +47,11 @@ export default function TheoryCard({ theory, index, onClick }) {
       </div>
 
       {/* Content */}
-      <div className="relative flex-1">
-        <h3 className="font-display text-sm sm:text-xl text-white font-bold leading-tight mb-2 sm:mb-3 group-hover:text-crimson-neon transition-colors line-clamp-2">
+      <div className="relative flex-1 min-w-0">
+        <h3 className="font-display text-sm sm:text-xl text-white font-bold leading-tight mb-2 sm:mb-3 group-hover:text-crimson-neon transition-colors line-clamp-2 break-words hyphens-auto">
           {theory.title}
         </h3>
-        <p className="font-sans text-[11px] sm:text-sm text-white/50 leading-relaxed line-clamp-3">
+        <p className="font-sans text-[11px] sm:text-sm text-white/50 leading-relaxed line-clamp-3 break-words hyphens-auto">
           {theory.description}
         </p>
       </div>

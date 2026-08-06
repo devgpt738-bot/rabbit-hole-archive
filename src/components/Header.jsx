@@ -3,6 +3,7 @@ import { Menu, Search, User, Bell, ChevronRight, X, Lock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CATEGORIES } from '../data';
 import { useAuth } from '../context/AuthContext';
+import appLogo from '../assets/logo.png';
 
 export default function Header({ setIsSidebarOpen, activeCategory, isSidebarOpen, searchQuery, setSearchQuery, onProfileClick }) {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -48,7 +49,7 @@ export default function Header({ setIsSidebarOpen, activeCategory, isSidebarOpen
       <div className="flex items-center">
         {!isSidebarOpen && (
           <a href="/" className="flex items-center justify-center -ml-5 sm:-ml-10 shrink-0 -mt-3 sm:-mt-5">
-            <motion.img layoutId="app-logo" src="/logo.png" alt="Logo" className="w-[70px] sm:w-[90px] drop-shadow-[0_0_15px_rgba(163,38,56,0.5)]" />
+            <motion.img layoutId="app-logo" src={appLogo} alt="Logo" className="w-[70px] sm:w-[90px] drop-shadow-[0_0_15px_rgba(163,38,56,0.5)]" />
           </a>
         )}
 
@@ -74,7 +75,7 @@ export default function Header({ setIsSidebarOpen, activeCategory, isSidebarOpen
 
         {/* Glass Search Pill */}
         <div className="flex items-center gap-2 sm:gap-3 bg-white/5 border border-white/10 rounded-full px-3 sm:px-4 py-2 sm:py-2.5
-          shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] hover:bg-white/10 hover:border-white/20 transition-all cursor-text group flex-1 max-w-[300px]">
+          shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] hover:bg-white/10 hover:border-white/20 transition-all cursor-text group flex-1 max-w-[300px] min-w-0">
           <Search size={16} className="text-white/50 group-hover:text-white transition-colors shrink-0" />
           <input 
             type="text" 
