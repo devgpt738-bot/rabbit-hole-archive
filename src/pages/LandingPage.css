@@ -221,47 +221,56 @@
   font-size: 1.1rem !important;
 }
 
-@media (max-width: 1024px), (max-aspect-ratio: 4/3) {
-  .primary-btn { font-size: 1rem !important; padding: 12px 35px !important; }
+@media (max-width: 768px), (max-aspect-ratio: 4/4) {
+  .primary-btn { font-size: 14px !important; padding: 12px 25px !important; }
   
   .about-modal-content {
-    padding: 15px 10px !important;
-    width: 95% !important;
+    padding: 20px 15px !important;
+    width: 90% !important;
+    max-width: 350px !important;
     max-height: 70vh !important;
     overflow-y: auto !important;
   }
   
   .modal-title {
-    font-size: 1.5rem !important;
+    font-size: 24px !important;
     margin-bottom: 10px !important;
   }
   
   .modal-text {
-    font-size: 0.9rem !important;
-    margin-bottom: 12px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 15px !important;
   }
 
   .close-modal-btn {
     margin-top: 10px !important;
-    padding: 8px 30px !important;
-    font-size: 1rem !important;
+    padding: 10px 30px !important;
+    font-size: 14px !important;
   }
   
   .landing-logo-container {
-    font-size: 14px !important;
-    font-size: clamp(10px, 4vw, 18px) !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    gap: 0 !important;
+    gap: 15px !important;
+    align-items: center !important;
+  }
+
+  .landing-logo-icon {
+    width: 65px !important;
+    height: auto !important;
   }
 
   .logo-optical-wrapper {
-    margin-right: -1.2em !important;
-    transform: translateY(-20%) !important;
+    margin-right: 0 !important;
+    transform: translateY(0) !important;
   }
   
   .cinematic-title {
+    font-size: 26px !important;
+    letter-spacing: 4px !important;
     white-space: nowrap !important;
     text-align: left !important;
+    margin-top: 3px !important;
   }
 }
