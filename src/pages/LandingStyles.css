@@ -221,7 +221,7 @@
   font-size: 1.1rem !important;
 }
 
-@media (max-width: 768px), (max-aspect-ratio: 4/4) {
+@media (max-width: 768px), (orientation: portrait) {
   .primary-btn { font-size: 14px !important; padding: 12px 25px !important; }
   
   .about-modal-content {
