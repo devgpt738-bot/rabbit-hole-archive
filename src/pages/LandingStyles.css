@@ -254,26 +254,31 @@
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: center !important; 
-    gap: 10px !important; /* Adding slight gap since negative margin is removed */
+    justify-content: center !important;
+    gap: 0 !important;
   }
 
   .logo-optical-wrapper {
-    margin-right: 0 !important; /* Remove negative margin to prevent overlap with massive logo */
+    margin-right: -10px !important; /* Save horizontal space */
     transform: translateY(0) !important; 
+    flex-shrink: 0 !important; /* Prevent flexbox from squishing the logo */
   }
 
   .landing-logo-icon {
-    width: 150px !important; /* 2x larger */
+    width: 110px !important; /* Significantly larger */
+    min-width: 110px !important;
     height: auto !important;
+    flex-shrink: 0 !important;
   }
   
   .cinematic-title {
-    font-size: 28px !important; 
-    letter-spacing: 2px !important; /* Slightly reduced so RABBIT fits */
-    white-space: normal !important; /* Allow text to wrap so it doesn't overflow horizontally */
+    font-size: 24px !important; /* Scaled to ensure horizontal fit */
+    letter-spacing: 2px !important;
+    white-space: nowrap !important; /* Keep on one line */
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1.1 !important;
+    line-height: 1 !important;
+    flex-shrink: 1 !important;
   }
 }
