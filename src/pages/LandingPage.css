@@ -225,7 +225,7 @@
   .about-modal-content {
     padding: 20px 15px;
     width: 95%;
-    max-height: 80vh;
+    max-height: 80dvh;
     overflow-y: auto;
   }
   
