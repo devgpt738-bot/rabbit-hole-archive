@@ -248,18 +248,20 @@
   }
   
   .landing-logo-container {
-    font-size: clamp(8px, 4vw, 14px) !important;
-    flex-direction: column !important;
-    gap: 10px !important;
+    font-size: 14px !important;
+    font-size: clamp(10px, 4vw, 18px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
   }
 
   .logo-optical-wrapper {
-    margin-right: 0 !important;
-    transform: translateY(0) !important;
+    margin-right: -1.2em !important;
+    transform: translateY(-20%) !important;
   }
   
   .cinematic-title {
-    white-space: normal !important;
-    text-align: center !important;
+    white-space: nowrap !important;
+    text-align: left !important;
   }
 }
