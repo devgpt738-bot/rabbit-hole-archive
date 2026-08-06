@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { CATEGORIES } from '../data';
 import { ChevronLeft } from 'lucide-react';
 import appLogo from '../assets/logo.png';
@@ -40,11 +41,11 @@ export default function Sidebar({ activeCategory, setActiveCategory, isSidebarOp
           rounded-r-[40px] shrink-0`}
       >
         <div className="pt-6 px-6 pb-4 flex items-center justify-between min-h-[80px]">
-          <a href="/" className="flex items-center transition-transform hover:scale-105">
+          <Link to="/" className="flex items-center transition-transform hover:scale-105">
             {isSidebarOpen && (
               <motion.img layoutId="app-logo" src={appLogo} alt="Logo" className="w-[90px] -ml-2 drop-shadow-[0_0_15px_rgba(163,38,56,0.5)]" />
             )}
-          </a>
+          </Link>
           <button 
             onClick={() => setIsSidebarOpen(false)}
             className="w-10 h-10 mt-3 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/20 hover:border-white/40 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:scale-105 transition-all duration-300 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] shrink-0"

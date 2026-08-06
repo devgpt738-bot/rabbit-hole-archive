@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, Search, User, Bell, ChevronRight, X, Lock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { CATEGORIES } from '../data';
 import { useAuth } from '../context/AuthContext';
 import appLogo from '../assets/logo.png';
@@ -48,9 +49,9 @@ export default function Header({ setIsSidebarOpen, activeCategory, isSidebarOpen
       <header className="h-[90px] flex items-center justify-between px-3 sm:px-6 md:px-12 bg-obsidian-900/30 backdrop-blur-[40px] border-b border-white/10 shrink-0 z-20">
       <div className="flex items-center">
         {!isSidebarOpen && (
-          <a href="/" className="flex items-center justify-center -ml-5 sm:-ml-10 shrink-0 -mt-3 sm:-mt-5">
+          <Link to="/" className="flex items-center justify-center -ml-5 sm:-ml-10 shrink-0 -mt-3 sm:-mt-5">
             <motion.img layoutId="app-logo" src={appLogo} alt="Logo" className="w-[70px] sm:w-[90px] drop-shadow-[0_0_15px_rgba(163,38,56,0.5)]" />
-          </a>
+          </Link>
         )}
 
         {!isSidebarOpen && (

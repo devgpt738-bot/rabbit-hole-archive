@@ -150,7 +150,7 @@ export default function Dashboard({ onOpenSearch }) {
           <main ref={mainRef} className="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-10 lg:p-12 space-y-12 scroll-smooth">
             
             {activeCategory === 'all' && !searchQuery && !isHeroDismissed && (
-              <HeroCard onDismiss={() => setIsHeroDismissed(true)} />
+              <HeroCard onDismiss={() => setIsHeroDismissed(true)} onSelect={(theory) => setSelectedTheory(theory)} />
             )}
 
               {/* Main Feed Content */}

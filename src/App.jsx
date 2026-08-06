@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlertTriangle, X } from 'lucide-react';
@@ -9,6 +9,33 @@ import TheoryPage from './pages/TheoryPage';
 import ProfilePage from './pages/ProfilePage';
 import SearchOverlay from './components/SearchOverlay';
 import { AuthProvider } from './context/AuthContext';
+
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.96 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 1.04 }}
+    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    className="absolute top-0 left-0 w-full h-[100dvh] overflow-hidden bg-black"
+    style={{ willChange: 'opacity, transform' }}
+  >
+    {children}
+  </motion.div>
+);
+
+function AnimatedRoutes({ setIsSearchOpen }) {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageWrapper><LandingPage /></PageWrapper>} />
+        <Route path="/archive" element={<PageWrapper><Dashboard onOpenSearch={() => setIsSearchOpen(true)} /></PageWrapper>} />
+        <Route path="/theory/:id" element={<PageWrapper><TheoryPage onOpenSearch={() => setIsSearchOpen(true)} /></PageWrapper>} />
+        <Route path="/profile" element={<PageWrapper><ProfilePage /></PageWrapper>} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -57,12 +84,7 @@ function App() {
             )}
           </AnimatePresence>
 
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/archive" element={<Dashboard onOpenSearch={() => setIsSearchOpen(true)} />} />
-            <Route path="/theory/:id" element={<TheoryPage onOpenSearch={() => setIsSearchOpen(true)} />} />
-            <Route path="/profile" element={<ProfilePage />} />
-          </Routes>
+          <AnimatedRoutes setIsSearchOpen={setIsSearchOpen} />
         </Router>
       </div>
     </AuthProvider>
