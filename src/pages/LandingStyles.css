@@ -249,36 +249,4 @@
     font-size: 14px !important;
   }
   
-  .landing-logo-container {
-    font-size: 16px !important; 
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important; 
-    justify-content: center !important;
-    gap: 0 !important;
-  }
-
-  .logo-optical-wrapper {
-    margin-right: -10px !important; /* Save horizontal space */
-    transform: translateY(0) !important; 
-    flex-shrink: 0 !important; /* Prevent flexbox from squishing the logo */
-  }
-
-  .landing-logo-icon {
-    width: 110px !important; /* Significantly larger */
-    min-width: 110px !important;
-    height: auto !important;
-    flex-shrink: 0 !important;
-  }
-  
-  .cinematic-title {
-    font-size: 24px !important; /* Scaled to ensure horizontal fit */
-    letter-spacing: 2px !important;
-    white-space: nowrap !important; /* Keep on one line */
-    text-align: left !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1 !important;
-    flex-shrink: 1 !important;
-  }
 }
