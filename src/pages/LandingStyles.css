@@ -249,4 +249,8 @@
     font-size: 14px !important;
   }
   
+  .landing-logo-container {
+    /* Perfectly scales the entire desktop structure down for mobile screens */
+    font-size: clamp(10px, 3.5vw, 15px) !important; 
+  }
 }
