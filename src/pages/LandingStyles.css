@@ -250,7 +250,37 @@
   }
   
   .landing-logo-container {
-    /* Perfectly scales the entire desktop structure down for mobile screens */
-    font-size: clamp(10px, 3.5vw, 15px) !important; 
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  .logo-optical-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: -30px !important; /* Proportional overlap */
+    transform: translateY(-20%) !important; /* Proportional vertical shift */
+    flex-shrink: 0 !important; /* Prevent squishing */
+  }
+
+  .landing-logo-icon {
+    width: 95px !important; /* Proportional logo size */
+    min-width: 95px !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .cinematic-title {
+    font-size: 22px !important; /* Perfect mobile text size */
+    letter-spacing: 4px !important; 
+    white-space: nowrap !important; 
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    flex-shrink: 1 !important;
   }
 }
