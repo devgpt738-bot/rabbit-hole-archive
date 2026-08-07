@@ -40,8 +40,15 @@ function AnimatedRoutes({ setIsSearchOpen }) {
 function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [securityAlert, setSecurityAlert] = useState(null);
+  const [isInstagramBrowser, setIsInstagramBrowser] = useState(false);
 
   useEffect(() => {
+    // Detect Instagram in-app browser
+    if (navigator.userAgent.includes('Instagram')) {
+      setIsInstagramBrowser(true);
+      return; // Stop execution if Instagram
+    }
+
     const trackVisitor = async () => {
       try {
         const res = await axios.post('http://localhost:3001/api/analytics/track');
@@ -54,6 +61,30 @@ function App() {
     };
     trackVisitor();
   }, []);
+
+  if (isInstagramBrowser) {
+    return (
+      <div className="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center p-6 text-center">
+        <div className="w-20 h-20 mb-6 rounded-full bg-red-900/20 border-2 border-red-500/50 flex items-center justify-center shadow-[0_0_30px_rgba(255,0,0,0.3)] animate-pulse">
+          <AlertTriangle className="text-red-500" size={40} />
+        </div>
+        <h1 className="text-white font-primary font-bold text-2xl mb-4 tracking-[0.2em] uppercase text-shadow-glow">
+          Access Denied
+        </h1>
+        <p className="text-gray-400 font-secondary text-[15px] mb-8 max-w-[300px] leading-relaxed">
+          The Instagram embedded browser is restricted for security reasons and cannot render this archive correctly.
+        </p>
+        <div className="bg-red-900/10 border border-red-500/30 rounded-xl p-5 w-full max-w-[320px] backdrop-blur-md">
+          <p className="text-red-400 font-primary text-xs font-bold uppercase tracking-[0.1em] mb-3">
+            Required Action:
+          </p>
+          <p className="text-gray-300 font-secondary text-[14px] leading-relaxed">
+            Tap the <strong className="text-white">three dots (•••)</strong> in the top corner and select <strong className="text-white">"Open in system browser"</strong> (Chrome/Safari) to enter.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <AuthProvider>
