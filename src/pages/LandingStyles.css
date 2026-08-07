@@ -254,28 +254,28 @@
     flex-wrap: nowrap !important;
     align-items: center !important; 
     justify-content: center !important;
-    gap: 0 !important;
+    gap: 10px !important; /* Added gap to replace overlap */
   }
 
   .logo-optical-wrapper {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-right: -30px !important; /* Proportional overlap */
-    transform: translateY(-20%) !important; /* Proportional vertical shift */
-    flex-shrink: 0 !important; /* Prevent squishing */
+    margin-right: 0 !important; /* Removed overlap completely */
+    transform: translateY(0) !important; /* Perfect vertical alignment */
+    flex-shrink: 0 !important; 
   }
 
   .landing-logo-icon {
-    width: 95px !important; /* Proportional logo size */
-    min-width: 95px !important;
+    width: 75px !important; /* Solid, visible logo size */
+    min-width: 75px !important;
     height: auto !important;
     flex-shrink: 0 !important;
   }
   
   .cinematic-title {
-    font-size: 22px !important; /* Perfect mobile text size */
-    letter-spacing: 4px !important; 
+    font-size: 18px !important; /* Reduced text size so it isn't too long/wide */
+    letter-spacing: 2px !important; /* Reduced letter spacing */
     white-space: nowrap !important; 
     text-align: left !important;
     margin: 0 !important;
