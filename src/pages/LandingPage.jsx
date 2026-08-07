@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LandingMobile.css';
+import './LandingView.css';
 import appLogo from '../assets/logo.png';
 import bgVideo from '../assets/da.mp4';
 

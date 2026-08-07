@@ -249,12 +249,18 @@
     font-size: 14px !important;
   }
   
+  .landing-container {
+    perspective: none !important; /* Disable 3D to fix mobile scaling bugs */
+  }
+
   .landing-logo-container {
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: center !important; 
     justify-content: center !important;
-    gap: 10px !important; /* Added gap to replace overlap */
+    gap: 15px !important; /* Increased gap */
+    transform: none !important; /* Disable 3D */
+    transform-style: flat !important;
   }
 
   .logo-optical-wrapper {
@@ -267,20 +273,23 @@
   }
 
   .landing-logo-icon {
-    width: 75px !important; /* Solid, visible logo size */
-    min-width: 75px !important;
+    width: 60px !important; /* Safe, smaller logo */
+    min-width: 60px !important;
     height: auto !important;
     flex-shrink: 0 !important;
+    transform: none !important; /* Disable 3D float animation */
+    animation: none !important;
   }
   
   .cinematic-title {
-    font-size: 18px !important; /* Reduced text size so it isn't too long/wide */
-    letter-spacing: 2px !important; /* Reduced letter spacing */
+    font-size: 16px !important; /* Very safe, small text size */
+    letter-spacing: 2px !important; 
     white-space: nowrap !important; 
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
     line-height: 1 !important;
     flex-shrink: 1 !important;
+    transform: none !important;
   }
 }
