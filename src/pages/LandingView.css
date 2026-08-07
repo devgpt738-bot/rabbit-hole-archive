@@ -222,7 +222,28 @@
 }
 
 @media (max-width: 768px), (orientation: portrait) {
-  .primary-btn { font-size: 14px !important; padding: 12px 25px !important; }
+  /* Center the entire UI block vertically */
+  .floating-ui-wrapper {
+    justify-content: center !important;
+    gap: 30px !important;
+    height: 100% !important;
+  }
+  
+  .hero-branding {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    gap: 20px !important;
+  }
+  
+  .bg-video {
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .primary-btn { 
+    font-size: 14px !important; 
+    padding: 12px 32px !important; /* Touch-friendly padding */
+  }
   
   .about-modal-content {
     padding: 20px 15px !important;
@@ -254,11 +275,11 @@
   }
 
   .landing-logo-container {
-    flex-direction: row !important;
+    flex-direction: column !important; /* Stack vertically */
     flex-wrap: nowrap !important;
     align-items: center !important; 
     justify-content: center !important;
-    gap: 15px !important; /* Increased gap */
+    gap: 20px !important; /* Spacing between logo and title */
     transform: none !important; /* Disable 3D */
     transform-style: flat !important;
   }
@@ -273,8 +294,8 @@
   }
 
   .landing-logo-icon {
-    width: 60px !important; /* Safe, smaller logo */
-    min-width: 60px !important;
+    width: 90px !important; /* Slightly larger since it's stacked */
+    min-width: 90px !important;
     height: auto !important;
     flex-shrink: 0 !important;
     transform: none !important; /* Disable 3D float animation */
@@ -282,10 +303,10 @@
   }
   
   .cinematic-title {
-    font-size: 16px !important; /* Very safe, small text size */
-    letter-spacing: 2px !important; 
+    font-size: 24px !important; /* Larger text since it's on its own line */
+    letter-spacing: 4px !important; 
     white-space: nowrap !important; 
-    text-align: left !important;
+    text-align: center !important;
     margin: 0 !important;
     padding: 0 !important;
     line-height: 1 !important;
