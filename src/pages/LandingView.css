@@ -228,7 +228,7 @@
     width: 100vw !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 40px !important; /* Space between branding and buttons */
+    gap: 20px !important; /* Reduced to fit the massive branding */
   }
   
   .hero-branding {
@@ -253,16 +253,18 @@
 
   /* 4. Set concrete, readable sizes */
   .landing-logo-icon {
-    width: 220px !important; /* 2x larger */
+    width: 90vw !important; /* Massive logo filling the width */
+    max-width: 450px !important;
     height: auto !important;
-    transform: translateY(-20px) !important; /* Lift it up a little bit */
+    transform: none !important;
   }
 
   .cinematic-title {
-    font-size: 28px !important; 
-    letter-spacing: 10px !important; /* Stretched text */
+    font-size: 12vw !important; /* Massive text filling the width */
+    letter-spacing: 1vw !important;
     text-align: center !important;
     white-space: nowrap !important;
+    line-height: 1 !important;
   }
   
   .bg-video {
