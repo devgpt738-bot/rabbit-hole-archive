@@ -51,7 +51,7 @@ function App() {
 
     const trackVisitor = async () => {
       try {
-        const res = await axios.post('http://localhost:3001/api/analytics/track');
+        const res = await axios.post('/api/analytics/track');
         if (res.data.threatScore >= 5) {
           setSecurityAlert(`SECURITY THREAT DETECTED [Level ${res.data.threatScore}/10] - Unusual Operating System (${res.data.os}) recognized. Your connection is being monitored.`);
         }

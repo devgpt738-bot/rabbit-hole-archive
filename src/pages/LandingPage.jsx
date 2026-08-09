@@ -33,11 +33,11 @@ export default function LandingPage() {
       {/* Static UI Container */}
       <div className="floating-ui-wrapper">
         <div className="hero-branding">
-          <div className="landing-logo-container">
-            <div className="logo-optical-wrapper">
-              <img src={appLogo} alt="Rabbit Logo" className="landing-logo-icon" />
+          <div className="landing-logo-container" style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', justifyContent: 'center', flexWrap: 'nowrap', width: '100%', transform: 'translateZ(0)' }}>
+            <div className="logo-optical-wrapper" style={{ transform: 'none', marginRight: '0', display: 'flex' }}>
+              <img src={appLogo} alt="Rabbit Logo" className="landing-logo-icon" style={{ width: '90px', height: 'auto', transform: 'none' }} />
             </div>
-            <h1 className="cinematic-title">RABBIT HOLE</h1>
+            <h1 className="cinematic-title" style={{ fontSize: '26px', letterSpacing: '2px', textAlign: 'left', whiteSpace: 'nowrap', lineHeight: '1', margin: '0' }}>RABBIT HOLE</h1>
           </div>
         </div>
         
