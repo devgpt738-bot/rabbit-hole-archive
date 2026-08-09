@@ -228,23 +228,40 @@
     width: 100vw !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 6vh !important;
+    gap: 40px !important; /* Space between branding and buttons */
   }
   
   .hero-branding {
     margin: 0 !important;
-    width: auto !important;
+    width: 100% !important;
   }
 
-  /* 2. Fix the Logo & Text Scaling */
+  /* 2. Stack Logo and Text (The Fix) */
   .landing-logo-container {
-    /* Shrinks the master 'em' size so the logo and text fit narrow screens perfectly */
-    font-size: clamp(10px, 3.2vw, 15px) !important; 
+    flex-direction: column !important; /* Stack logo on top of text */
+    gap: 15px !important; /* Space between them */
     transform: translateZ(0) !important; 
   }
 
+  /* 3. Strip away the desktop alignment hacks */
+  .logo-optical-wrapper {
+    transform: none !important; /* Stops the logo from sinking */
+    margin-right: 0 !important; /* Stops the text from overlapping */
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* 4. Set concrete, readable sizes */
+  .landing-logo-icon {
+    width: 110px !important; /* Much larger and clearly visible */
+    height: auto !important;
+  }
+
   .cinematic-title {
-    letter-spacing: 0.15em !important;
+    font-size: 28px !important; /* Readable, prominent title */
+    letter-spacing: 5px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
   }
   
   .bg-video {
@@ -252,50 +269,50 @@
     object-position: center !important;
   }
 
-  /* 3. Button & Link Positioning (Perfect Mobile Touch Targets) */
+  /* 5. Button & Link Positioning */
   .hero-actions {
-    gap: 25px !important;
+    gap: 20px !important;
     width: 100% !important;
     align-items: center !important;
   }
 
   .primary-btn { 
-    font-size: 15px !important; 
-    padding: 14px 0 !important;
-    width: 220px !important; 
+    font-size: 16px !important; 
+    padding: 15px 0 !important;
+    width: 240px !important; /* Large, easy-to-tap width */
     text-align: center !important;
   }
 
   .text-link {
-    font-size: 14px !important;
-    letter-spacing: 2px !important;
-    padding: 10px 20px !important; 
+    font-size: 13px !important;
+    letter-spacing: 3px !important;
+    padding: 12px 20px !important; 
   }
   
-  /* 4. About Modal Mobile Fixes */
+  /* 6. About Modal Mobile Fixes */
   .about-modal-content {
     padding: 30px 20px !important;
-    width: 85% !important;
-    max-width: 320px !important;
+    width: 90% !important;
+    max-width: 340px !important;
     max-height: 75vh !important;
     overflow-y: auto !important;
     border-radius: 20px !important;
   }
   
   .modal-title {
-    font-size: 22px !important;
+    font-size: 24px !important;
     margin-bottom: 15px !important;
   }
   
   .modal-text {
-    font-size: 14px !important;
-    line-height: 1.6 !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
     margin-bottom: 15px !important;
   }
 
   .close-modal-btn {
     margin-top: 15px !important;
     padding: 12px 30px !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
   }
 }
