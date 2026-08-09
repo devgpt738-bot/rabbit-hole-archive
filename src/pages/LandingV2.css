@@ -236,11 +236,14 @@
     width: 100% !important;
   }
 
-  /* 2. Stack Logo and Text (The Fix) */
+  /* 2. Arrange Logo and Text Horizontally */
   .landing-logo-container {
-    flex-direction: column !important; /* Stack logo on top of text */
-    gap: 15px !important; /* Space between them */
+    flex-direction: row !important; /* Horizontally beside each other */
+    gap: 20px !important; /* Space between them */
     transform: translateZ(0) !important; 
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   /* 3. Strip away the desktop alignment hacks */
@@ -251,18 +254,17 @@
     justify-content: center !important;
   }
 
-  /* 4. Set concrete, readable sizes */
+  /* 4. Set large but safe sizes for horizontal layout */
   .landing-logo-icon {
-    width: 90vw !important; /* Massive logo filling the width */
-    max-width: 450px !important;
+    width: 90px !important; /* Large, but small enough to fit next to text */
     height: auto !important;
     transform: none !important;
   }
 
   .cinematic-title {
-    font-size: 12vw !important; /* Massive text filling the width */
-    letter-spacing: 1vw !important;
-    text-align: center !important;
+    font-size: 26px !important; /* Large readable text */
+    letter-spacing: 2px !important;
+    text-align: left !important;
     white-space: nowrap !important;
     line-height: 1 !important;
   }
