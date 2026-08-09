@@ -2,14 +2,39 @@ import express from 'express';
 import cors from 'cors';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import { statements } from './db.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-classified-key-do-not-share';
 
+app.use(helmet()); // Secure HTTP headers
 app.use(cors());
 app.use(express.json());
+
+// --- Rate Limiters ---
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+  message: { error: 'Too many requests from this IP, please try again after 15 minutes' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // Limit each IP to 10 auth requests per 15 mins (stricter against brute force)
+  message: { error: 'Too many login attempts from this IP, please try again after 15 minutes' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// Apply general API limiter to all /api/ routes
+app.use('/api/', apiLimiter);
+// Apply strict auth limiter specifically to /api/auth/ routes
+app.use('/api/auth/', authLimiter);
 
 // --- Authentication Middleware ---
 const authenticateToken = (req, res, next) => {
