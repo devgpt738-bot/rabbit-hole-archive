@@ -275,11 +275,11 @@
   }
 
   .landing-logo-container {
-    flex-direction: column !important; /* Stack vertically */
+    flex-direction: row !important; /* Side-by-side like PC */
     flex-wrap: nowrap !important;
     align-items: center !important; 
     justify-content: center !important;
-    gap: 20px !important; /* Spacing between logo and title */
+    gap: 15px !important; /* Perfect spacing between logo and text */
     transform: none !important; /* Disable 3D */
     transform-style: flat !important;
   }
@@ -294,8 +294,8 @@
   }
 
   .landing-logo-icon {
-    width: 90px !important; /* Slightly larger since it's stacked */
-    min-width: 90px !important;
+    width: 75px !important; /* Big enough to pop, small enough to fit next to text */
+    min-width: 75px !important;
     height: auto !important;
     flex-shrink: 0 !important;
     transform: none !important; /* Disable 3D float animation */
@@ -303,10 +303,10 @@
   }
   
   .cinematic-title {
-    font-size: 24px !important; /* Larger text since it's on its own line */
-    letter-spacing: 4px !important; 
+    font-size: 26px !important; /* Larger text size */
+    letter-spacing: 2px !important; /* Slightly tighter spacing to fit mobile screen */
     white-space: nowrap !important; 
-    text-align: center !important;
+    text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
     line-height: 1 !important;
