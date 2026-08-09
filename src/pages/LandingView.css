@@ -253,13 +253,14 @@
 
   /* 4. Set concrete, readable sizes */
   .landing-logo-icon {
-    width: 110px !important; /* Much larger and clearly visible */
+    width: 220px !important; /* 2x larger */
     height: auto !important;
+    transform: translateY(-20px) !important; /* Lift it up a little bit */
   }
 
   .cinematic-title {
-    font-size: 28px !important; /* Readable, prominent title */
-    letter-spacing: 5px !important;
+    font-size: 28px !important; 
+    letter-spacing: 10px !important; /* Stretched text */
     text-align: center !important;
     white-space: nowrap !important;
   }
