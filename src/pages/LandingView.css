@@ -222,19 +222,29 @@
 }
 
 @media (max-width: 768px), (orientation: portrait) {
-  /* Center the entire UI block vertically */
+  /* 1. Center the entire UI perfectly on the screen */
   .floating-ui-wrapper {
+    height: 100vh !important;
+    width: 100vw !important;
     justify-content: center !important;
-    gap: 30px !important;
-    height: 100% !important;
-    width: 100% !important; /* Ensure it spans the screen */
+    align-items: center !important;
+    gap: 6vh !important;
   }
   
   .hero-branding {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    gap: 20px !important;
-    width: 100% !important; /* Allow the container to span the screen */
+    margin: 0 !important;
+    width: auto !important;
+  }
+
+  /* 2. Fix the Logo & Text Scaling */
+  .landing-logo-container {
+    /* Shrinks the master 'em' size so the logo and text fit narrow screens perfectly */
+    font-size: clamp(10px, 3.2vw, 15px) !important; 
+    transform: translateZ(0) !important; 
+  }
+
+  .cinematic-title {
+    letter-spacing: 0.15em !important;
   }
   
   .bg-video {
@@ -242,33 +252,50 @@
     object-position: center !important;
   }
 
+  /* 3. Button & Link Positioning (Perfect Mobile Touch Targets) */
+  .hero-actions {
+    gap: 25px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
   .primary-btn { 
-    font-size: 14px !important; 
-    padding: 12px 32px !important; /* Touch-friendly padding */
+    font-size: 15px !important; 
+    padding: 14px 0 !important;
+    width: 220px !important; 
+    text-align: center !important;
+  }
+
+  .text-link {
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
+    padding: 10px 20px !important; 
   }
   
+  /* 4. About Modal Mobile Fixes */
   .about-modal-content {
-    padding: 20px 15px !important;
-    width: 90% !important;
-    max-width: 350px !important;
-    max-height: 70vh !important;
+    padding: 30px 20px !important;
+    width: 85% !important;
+    max-width: 320px !important;
+    max-height: 75vh !important;
     overflow-y: auto !important;
+    border-radius: 20px !important;
   }
   
   .modal-title {
-    font-size: 24px !important;
-    margin-bottom: 10px !important;
+    font-size: 22px !important;
+    margin-bottom: 15px !important;
   }
   
   .modal-text {
     font-size: 14px !important;
-    line-height: 1.5 !important;
+    line-height: 1.6 !important;
     margin-bottom: 15px !important;
   }
 
   .close-modal-btn {
-    margin-top: 10px !important;
-    padding: 10px 30px !important;
+    margin-top: 15px !important;
+    padding: 12px 30px !important;
     font-size: 14px !important;
   }
 }
